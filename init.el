@@ -352,6 +352,7 @@ you should place your code here."
                         ("@Office" . ?o)
                         ("@Home" . ?h)
                         (:endgroup . nil)
+                        ("Meeting" . ?m)
                         ("Call" . ?c)
                         ("Email" . ?e)))
 )
