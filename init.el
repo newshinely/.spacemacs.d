@@ -337,7 +337,8 @@ you should place your code here."
   ;; 配置 capture 文件
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "~/org-notes/todo.org" "Tasks")
-           "* TODO %?\n SCHEDULED: <%<%Y-%m-%d %a %H:%M>>")
+           "* TODO [#B] %?\n  Created on  %U\n %i\n")
+  ;;         "* TODO %?\n SCHEDULED: <%<%Y-%m-%d %a %H:%M>>")
           ("j" "Journal" entry (file+datetree "~/org-notes/journal.org")
            "* %?\nEntered on %U\n  %i\n  %a")))
 
@@ -355,6 +356,11 @@ you should place your code here."
                         ("Meeting" . ?m)
                         ("Call" . ?c)
                         ("Email" . ?e)))
+
+  ;; 配置优先级
+  (setq org-highest-priority ?A)
+  (setq org-lowest-priority  ?D)
+  (setq org-default-priority ?C)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
