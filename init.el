@@ -338,7 +338,9 @@ you should place your code here."
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "~/org-notes/todo.org" "Tasks")
            "* TODO [#B] %?\n  Created on  %U\n %i\n")
-  ;;         "* TODO %?\n SCHEDULED: <%<%Y-%m-%d %a %H:%M>>")
+          ;; "* TODO %?\n SCHEDULED: <%<%Y-%m-%d %a %H:%M>>")
+          ("x" "Test" entry (file+headline "~/org-notes/test.org" "Level 1" "Level 2")
+           "* TODO [#B] %?\n  Created on  %U\n %i\n")
           ("j" "Journal" entry (file+datetree "~/org-notes/journal.org")
            "* %?\nEntered on %U\n  %i\n  %a")))
 
