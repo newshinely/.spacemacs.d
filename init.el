@@ -332,21 +332,23 @@ you should place your code here."
   (setq powerline-default-separator 'arrow)
 
   ;; 配置 agenda 文件
-  (setq org-agenda-files '("~/org-notes"))
+  (setq org-agenda-files '("~/org-notes/Tasks.org"))
 
   ;; 配置 capture 文件
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/org-notes/todo.org" "Tasks")
+        '(("t" "Todo" entry (file+headline "~/org-notes/Tasks.org" "TodoList")
            "* TODO [#B] %?\n  Created on  %U\n %i\n")
+          ("p" "Project" entry (file+headline "~/org-notes/Tasks.org" "Project")
+           "* %? [/]\n")
           ;; "* TODO %?\n SCHEDULED: <%<%Y-%m-%d %a %H:%M>>")
           ("x" "Test" entry (file+headline "~/org-notes/test.org" "Level 1" "Level 2")
            "* TODO [#B] %?\n  Created on  %U\n %i\n")
-          ("j" "Journal" entry (file+datetree "~/org-notes/journal.org")
+          ("n" "Note" entry (file+datetree "~/org-notes/Note.org")
            "* %?\nEntered on %U\n  %i\n  %a")))
 
   ;; 配置 TODO 关键字
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAITING(w@/!)" "|" "DONE(d!)")
+        '((sequence "TODO(t)" "NEXT(n!)" "WAITING(w@/!)" "|" "DONE(d!)")
           (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
           (sequence "|" "CANCELED(c@/!)")))
 
